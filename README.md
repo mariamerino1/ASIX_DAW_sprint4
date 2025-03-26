@@ -1,6 +1,8 @@
 # 📋 Projecte CRUD de Tasques amb FastAPI + MongoDB + Frontend senzill
 
 Aquest projecte és un exemple educatiu d'una aplicació web **CRUD** completa per gestionar una llista de tasques.
+Per utilitzar-lo, tenir el docker de monodb server funcionant.
+I crear un entorn virtual de python per instal.lar i recordar activar-lo cada cop que poseu en marxa uvicorn.
 
 ## 🧱 Estructura del projecte
 
@@ -23,8 +25,8 @@ crud_tasques/
 
 ## 🚀 Tecnologies utilitzades
 
+- **MongoDB server** (SGBD)
 - **FastAPI** (backend)
-- **MongoDB** (base de dades)
 - **Motor** (driver async per MongoDB)
 - **HTML + CSS + JavaScript** (frontend senzill)
 - **Apidog** (per testeig d'API)
@@ -60,6 +62,7 @@ Obre el fitxer `frontend/index.html` en el navegador o utilitza **Live Server** 
 
 ## 📂 Recursos
 
+- [Explicació codi FastApi](docs/explicacio_fastapi.md)
 - [Guia test Apidog](docs/guia_test_apidog.md)
 - [Guia ús Frontend](docs/guia_frontend.md)
 - [Guia importació Apidog](docs/guia_import_apidog.md)
