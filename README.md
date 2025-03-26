@@ -31,6 +31,31 @@ crud_tasques/
 - **HTML + CSS + JavaScript** (frontend senzill)
 - **Apidog** (per testeig d'API)
 
+## :wrench: Posada en marxa
+
+clonar aquest repo al directori de treball.
+
+anar al directori de treball i crear un entorn virtual de python.
+Assegurar-se d'utilitzar python 3.12 o superior:
+```bash
+python3.12 -m venv venv
+```
+
+Activar l'entorn:
+```bash
+source venv/bin/activate
+```
+
+Instal·lar l'aplicació:
+```bash
+pip install -r requirements.txt
+```
+
+(per desactivar l'entor
+```bash
+deactivate
+```
+)
 ## ▶️ Instruccions d'execució
 
 ### 1. Arrencar el backend
