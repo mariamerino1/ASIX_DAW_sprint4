@@ -29,26 +29,17 @@ crud_tasques/
 - **HTML + CSS + JavaScript** (frontend senzill)
 - **Apidog** (per testeig d'API)
 
----
-
 ## ▶️ Instruccions d'execució
 
 ### 1. Arrencar el backend
-
-Assegura't que MongoDB està actiu a `mongodb://localhost:27017`
-
 ```bash
 cd backend
 uvicorn main:app --reload
 ```
-
 L'API estarà disponible a: [http://localhost:8000](http://localhost:8000)
 
 ### 2. Obrir el frontend
-
 Obre el fitxer `frontend/index.html` en el navegador o utilitza **Live Server** a VS Code.
-
----
 
 ## 🧪 Testejar l'API amb Apidog
 
@@ -56,12 +47,9 @@ Obre el fitxer `frontend/index.html` en el navegador o utilitza **Live Server** 
 2. Importa la col·lecció: `tests/apidog_tasques_fastapi_collection.json`
 3. Executa els endpoints:
    - `GET /tasques`
-   - `POST /tasques` (amb generació automàtica de títol)
+   - `POST /tasques`
    - `PUT /tasques/:id`
    - `DELETE /tasques/:id`
-4. El POST desa l'`id` global per poder-lo fer servir en PUT i DELETE.
-
----
 
 ## 🧠 Extensió (idees de millora)
 
@@ -70,15 +58,11 @@ Obre el fitxer `frontend/index.html` en el navegador o utilitza **Live Server** 
 - Validació de formulari abans d'enviar.
 - Disseny responsive amb CSS modern.
 
----
-
 ## 📂 Recursos
 
-- [Guia test Apidog (PDF)](guia_test_apidog_fastapi.pdf)
-- [Guia ús Frontend (PDF)](guia_frontend_api_fastapi.pdf)
-- [Guia importació col·lecció Apidog (PDF)](guia_importar_apidog_fastapi.pdf)
-
----
+- [Guia test Apidog](docs/guia_test_apidog.md)
+- [Guia ús Frontend](docs/guia_frontend.md)
+- [Guia importació Apidog](docs/guia_import_apidog.md)
 
 ## 🙌 Autoria
 
