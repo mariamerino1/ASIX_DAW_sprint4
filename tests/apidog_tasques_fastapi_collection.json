@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": "Tasques FastAPI",
+    "schema": "https://apidog.io/schema/collection/v1"
+  },
+  "item": [
+    {
+      "name": "GET /tasques",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasques",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "tasques"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Codi de resposta \u00e9s 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Resposta \u00e9s una array\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(Array.isArray(jsonData)).to.be.true;",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST /tasques",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"{{titol_aleatori}}\",\n  \"description\": \"Creada autom\u00e0ticament\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tasques",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "tasques"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const titol = \"Tasca \" + Math.floor(Math.random() * 1000);",
+              "pm.environment.set(\"titol_aleatori\", titol);"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "pm.test(\"Resposta conte ID\", function () {",
+              "    pm.expect(jsonData.id).to.not.be.undefined;",
+              "});",
+              "pm.globals.set(\"tasca_id\", jsonData.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PUT /tasques/:id",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Actualitzada\",\n  \"description\": \"Descripcio modificada\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tasques/{{tasca_id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "tasques",
+            "{{tasca_id}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE /tasques/:id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/tasques/{{tasca_id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "tasques",
+            "{{tasca_id}}"
+          ]
+        }
+      }
+    }
+  ]
+}
