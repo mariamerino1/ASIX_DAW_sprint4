@@ -1,5 +1,5 @@
-from backend.database import db
-from backend.models import Tasca
+from database import db
+from models import Tasca
 from bson import ObjectId
 
 collection = db["tasques"]

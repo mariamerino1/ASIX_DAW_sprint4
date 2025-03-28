@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from backend.models import Tasca
-from backend.crud import *
+from models import Tasca
+from crud import *
 
 router = APIRouter()
 
