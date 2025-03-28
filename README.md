@@ -58,6 +58,12 @@ deactivate
 )
 ## ▶️ Instruccions d'execució
 
+Modificar el codi per utilitzar la connexió al vostre mongoDB.
+
+Podeu mirar la cadena de connexió a compass.
+
+La cadena de connexió l'hem de posar al lloc corresponent de database.py
+
 ### 1. Arrencar el backend
 ```bash
 cd backend
