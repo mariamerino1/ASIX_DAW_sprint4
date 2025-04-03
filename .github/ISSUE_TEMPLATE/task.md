@@ -1,5 +1,5 @@
 ---
-name: Task
+name: 📝 Tasca
 about: Tasca
 title: "[TASK]"
 labels: ''
